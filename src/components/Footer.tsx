@@ -35,6 +35,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <a href="#proyectos" className="opacity-80 hover:opacity-100 transition-opacity">
+                  Proyectos
+                </a>
+              </li>
+              <li>
                 <a href="#nosotros" className="opacity-80 hover:opacity-100 transition-opacity">
                   Nosotros
                 </a>
