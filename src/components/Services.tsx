@@ -40,18 +40,12 @@ const Services = () => {
     <section id="servicios" className="py-24 bg-geometric-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-block mb-4">
-            <div className="bg-primary/10 border-l-4 border-primary px-4 py-2">
-              <p className="text-primary font-semibold">NUESTROS SERVICIOS</p>
-            </div>
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Soluciones Integrales en{" "}
-            <span className="text-gradient">Construcción</span>
+            Nuestros{" "}
+            <span className="text-gradient">Servicios</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ofrecemos una amplia gama de servicios especializados para satisfacer todas sus necesidades
-            de construcción y mantenimiento.
+            Soluciones integrales de construcción y mantenimiento adaptadas a tus necesidades
           </p>
         </div>
 
@@ -61,7 +55,7 @@ const Services = () => {
             return (
               <Card
                 key={index}
-                className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ${
+                className={`group hover:shadow-xl border-2 shadow-lg transition-all duration-300 hover:-translate-y-2 ${
                   service.featured
                     ? "border-primary border-2 bg-primary/5"
                     : "border-border hover:border-primary/50"

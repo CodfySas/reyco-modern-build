@@ -58,15 +58,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span className="opacity-80">+57 300 123 4567</span>
+                <span className="opacity-80">+57 305 362 9682</span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span className="opacity-80">contacto@cpningenieria.com</span>
+                <span className="opacity-80">cpn.ing.sas@gmail.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span className="opacity-80">Barranquilla, Atlántico, Colombia</span>
+                <span className="opacity-80">Carrera 21 No. 18-42, Baranoa, Atlántico, Colombia</span>
               </li>
             </ul>
           </div>

@@ -1,20 +1,37 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Calendar } from "lucide-react";
-import warehouseImage from "@/assets/project-warehouse.jpg";
-import residentialImage from "@/assets/project-residential.jpg";
-import pavementImage from "@/assets/project-pavement.jpg";
+import warehouseImage from "@/assets/project1.png";
+import warehouse2Image from "@/assets/project2.png";
+import residentialImage from "@/assets/project4.jpg";
+import pavementImage from "@/assets/project3.png";
 import renovationImage from "@/assets/project-renovation.jpg";
 
 const projects = [
+  {
+    title: "Vivienda Residencial Belamar",
+    description: "Construcción de vivienda de 2 pisos con diseño moderno y funcional.",
+    category: "Construcción Residencial",
+    location: "Tubara, Atlántico",
+    year: "2025",
+    image: residentialImage,
+  },
+  {
+    title: "Bodega Maxiagro Baranoa",
+    description: "Construcción de estructura de bodega para empresa Maxiagro en la via de la cordialidad",
+    category: "Obras Civiles",
+    location: "Baranoa, Atlántico",
+    year: "2022-2023",
+    image: warehouseImage,
+  },
   {
     title: "Bodega Industrial EKI",
     description: "Construcción de estructura de bodega para empresa EKI en el Parque Industrial La Floresta.",
     category: "Obras Civiles",
     location: "Galapa, Atlántico",
     year: "2022-2023",
-    image: warehouseImage,
-    featured: true,
+    image: warehouse2Image,
+    featured: false,
   },
   {
     title: "Pavimento Parque La Floresta",
@@ -23,22 +40,6 @@ const projects = [
     location: "Galapa, Atlántico",
     year: "2023",
     image: pavementImage,
-  },
-  {
-    title: "Vivienda Unifamiliar Villa Olímpica",
-    description: "Construcción de vivienda unifamiliar de 3 niveles con diseño moderno y funcional.",
-    category: "Construcción Residencial",
-    location: "Villa Olímpica, Galapa",
-    year: "2021",
-    image: residentialImage,
-  },
-  {
-    title: "Remodelación Villa Campestre",
-    description: "Ampliación y remodelación de 3 niveles, transformación completa de espacios.",
-    category: "Remodelaciones",
-    location: "Villa Campestre",
-    year: "2020",
-    image: renovationImage,
   },
 ];
 
@@ -89,12 +90,6 @@ const Portfolio = () => {
                       project.featured ? "h-full min-h-[400px]" : "h-[300px]"
                     }`}
                   />
-                  {/* Geometric overlay on hover */}
-                  <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    <div className="text-center text-primary-foreground p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      <p className="text-lg font-semibold">Ver Proyecto</p>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Content Section */}
@@ -129,34 +124,9 @@ const Portfolio = () => {
                       <span>{project.year}</span>
                     </div>
                   </div>
-
-                  {/* Geometric corner decoration */}
-                  <div className="mt-6 relative">
-                    <div className="w-12 h-12 border-4 border-primary/20 absolute -bottom-3 -right-3" />
-                  </div>
                 </CardContent>
               </div>
             </Card>
-          ))}
-        </div>
-
-        {/* Stats Section */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          {[
-            { number: "50+", label: "Proyectos Completados" },
-            { number: "5+", label: "Años de Experiencia" },
-            { number: "100%", label: "Proyectos Exitosos" },
-            { number: "24/7", label: "Soporte Técnico" },
-          ].map((stat, index) => (
-            <div
-              key={index}
-              className="text-center p-6 border-2 border-border hover:border-primary transition-all rounded-sm group"
-            >
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">
-                {stat.number}
-              </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </div>
           ))}
         </div>
       </div>

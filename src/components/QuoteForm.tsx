@@ -22,20 +22,46 @@ const QuoteForm = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
 
-    toast({
-      title: "¡Solicitud enviada!",
-      description: "Nos pondremos en contacto contigo pronto.",
-    });
+    // Agregar tu clave de Web3Forms
+    formData.append("access_key", "3baec5bd-26da-4f18-a942-275178688540");
 
-    setLoading(false);
-    (e.target as HTMLFormElement).reset();
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "✅ ¡Solicitud enviada!",
+          description: "Nos pondremos en contacto contigo pronto.",
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "❌ Error al enviar",
+          description: "Por favor intenta nuevamente más tarde.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "⚠️ Error de conexión",
+        description: "No se pudo conectar con el servidor. Intenta otra vez.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section id="cotizacion" className="py-24 bg-geometric-bg">
+    <section id="cotizacion" className="py-24 bg-neutral-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <div className="inline-block mb-4">
